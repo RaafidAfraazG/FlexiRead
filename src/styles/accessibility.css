@@ -1,0 +1,196 @@
+/* Accessibility Widget Styles */
+
+/* High Contrast */
+.accessibility-contrast {
+  filter: contrast(150%) !important;
+}
+
+/* Highlight Links */
+.accessibility-highlightLinks a {
+  border-bottom: 3px solid #ff4444 !important;
+  background-color: #fff3cd !important;
+  padding: 2px 4px !important;
+  border-radius: 3px !important;
+}
+
+/* Bigger Text */
+.accessibility-biggerText {
+  font-size: 120% !important;
+}
+
+.accessibility-biggerText * {
+  font-size: inherit !important;
+}
+
+/* Text Spacing */
+.accessibility-textSpacing {
+  line-height: 1.8 !important;
+  letter-spacing: 0.12em !important;
+  word-spacing: 0.16em !important;
+}
+
+.accessibility-textSpacing * {
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  word-spacing: inherit !important;
+}
+
+/* Pause Animations */
+.accessibility-pauseAnimations *,
+.accessibility-pauseAnimations *::before,
+.accessibility-pauseAnimations *::after {
+  animation-delay: -1ms !important;
+  animation-duration: 1ms !important;
+  animation-iteration-count: 1 !important;
+  background-attachment: initial !important;
+  scroll-behavior: auto !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+}
+
+/* Hide Images */
+.accessibility-hideImages img,
+.accessibility-hideImages svg,
+.accessibility-hideImages picture,
+.accessibility-hideImages canvas,
+.accessibility-hideImages video {
+  visibility: hidden !important;
+}
+
+/* Show alt text for hidden images */
+.accessibility-hideImages img[alt]:after {
+  content: attr(alt);
+  visibility: visible !important;
+  display: block !important;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 8px;
+  font-size: 14px;
+  color: #495057;
+  border-radius: 4px;
+}
+
+/* Dyslexia Friendly Font */
+.accessibility-dyslexiaFont,
+.accessibility-dyslexiaFont * {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', cursive !important;
+}
+
+/* Bigger Cursor */
+.accessibility-biggerCursor * {
+  cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIgMkwyIDI4TDEwLjUgMTkuNUwxNi41IDI2TDIwIDIyLjVMMTQgMTYuNUwyMiA4SDJaIiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMSIvPgo8L3N2Zz4K'), auto !important;
+}
+
+/* Show Tooltips */
+.accessibility-tooltips [title]:hover::after,
+.accessibility-tooltips [aria-label]:hover::after {
+  content: attr(title) attr(aria-label);
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 10001;
+  pointer-events: none;
+  margin-top: 5px;
+  left: 0;
+}
+
+/* Page Structure - Highlight Headings */
+.accessibility-pageStructure h1,
+.accessibility-pageStructure h2,
+.accessibility-pageStructure h3,
+.accessibility-pageStructure h4,
+.accessibility-pageStructure h5,
+.accessibility-pageStructure h6 {
+  outline: 2px solid #007cba !important;
+  outline-offset: 2px !important;
+  background: rgba(0, 124, 186, 0.1) !important;
+  padding: 4px 8px !important;
+  position: relative !important;
+}
+
+.accessibility-pageStructure h1::before {
+  content: 'H1';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  background: #007cba;
+  color: white;
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.accessibility-pageStructure h2::before {
+  content: 'H2';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  background: #28a745;
+  color: white;
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.accessibility-pageStructure h3::before {
+  content: 'H3';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  background: #ffc107;
+  color: black;
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.accessibility-pageStructure h4::before,
+.accessibility-pageStructure h5::before,
+.accessibility-pageStructure h6::before {
+  content: 'H' attr(data-level);
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  background: #6c757d;
+  color: white;
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+/* Focus indicators for better keyboard navigation */
+.accessibility-contrast *:focus,
+.accessibility-highlightLinks *:focus,
+.accessibility-biggerText *:focus,
+.accessibility-textSpacing *:focus {
+  outline: 3px solid #007cba !important;
+  outline-offset: 2px !important;
+}
+
+/* Ensure widget is always visible */
+.accessibility-widget {
+  position: relative !important;
+  z-index: 999999 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .menu-panel {
+    right: 10px !important;
+    left: 10px !important;
+    width: auto !important;
+  }
+  
+  .floating-btn {
+    right: 10px !important;
+    bottom: 10px !important;
+  }
+}
