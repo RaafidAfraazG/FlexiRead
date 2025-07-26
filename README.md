@@ -78,7 +78,7 @@ Once loaded, the floating button will appear at the bottom-right corner of the p
 ## 🚀 Deployment
 
 The project is deployed using GitHub Pages and can be accessed here:
-🔗 https://raafidafraazg.github.io/FlexiRead/
+   🔗 https://raafidafraazg.github.io/FlexiRead/
 
 ## 🤝 Contributing
 
